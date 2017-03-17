@@ -19,9 +19,20 @@ export function todoReducer(state: TodoState = INITIAL_STATE,
       console.log(state.todos);
 
       let newTodo = { text: action.payload, done: false } as Todo;
-      state.todos.push(newTodo);
 
-      return state;
+      //Object.assign
+      let newState = Object.assign({}, state);
+      newState.todos.push(newTodo);
+      return newState;
+
+      // return { 
+      //   todos: state.todos.concat(newTodo) 
+      // };
+
+
+      // state.todos.push(newTodo);
+
+      // return state;
     
     // case TodoActions.Other:
     //   return state; // or something.
