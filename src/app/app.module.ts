@@ -23,4 +23,17 @@ import { TodoActions } from './todo.actions';
   providers: [TodoActions],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    private ngRedux: NgRedux<IAppState>,
+    private devTool: DevToolsExtension
+    ) {
+
+      this.ngRedux.configureStore(
+        rootReducer,
+        {},
+        [ createLogger() ],
+        [ ...enhancers, devTool.isEnabled() ? devTool.enhancer() : f => f]);      
+  }
+
+ }
