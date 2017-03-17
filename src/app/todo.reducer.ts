@@ -17,6 +17,7 @@ export function todoReducer(state: TodoState = INITIAL_STATE,
       // Do not do this!
       console.log(action);
       console.log(state.todos);
+      
       let newTodo = { text: action.payload } as Todo;
       state.todos.push(newTodo);
 
