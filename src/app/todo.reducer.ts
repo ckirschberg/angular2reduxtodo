@@ -2,7 +2,7 @@ import { TodoActions } from './todo.actions';
 import { IAppState } from './store';
 
 const INITIAL_STATE: any = {
-    todos: []
+    todos: [ { text: 'Drink beer', done: false } ]
 };
 
 

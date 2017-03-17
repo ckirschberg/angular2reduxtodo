@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.todos$ = this.ngRedux.select(store => store.todos);
+    
   }
 
   constructor(private todoActions: TodoActions,
