@@ -11,13 +11,26 @@ export function todoReducer(state: TodoState = INITIAL_STATE,
   action:any) {
 
   switch (action.type) {
+    case TodoActions.DELETE_TODO:
+      console.log("in the delete reducer. Delete this todo", 
+        action.payload);
+
+        // Copy the state object
+        // Remove the "correct" todo.
+        
+      return state;
+    
+    case TodoActions.UPDATE_TODO:
+      console.log("in the update part of the reducer. Update this todo", 
+        action.payload);
+
+      // Create a new state object
+      // replace the "correct" todo with the todo in action.payload.
+
+
+      return state;
 
     case TodoActions.ADD_TODO:
-      
-      // Do not do this!
-      console.log(action);
-      console.log(state.todos);
-
       let newTodo = { text: action.payload, done: false } as Todo;
 
       //Object.assign
@@ -28,11 +41,6 @@ export function todoReducer(state: TodoState = INITIAL_STATE,
       // return { 
       //   todos: state.todos.concat(newTodo) 
       // };
-
-
-      // state.todos.push(newTodo);
-
-      // return state;
     
     // case TodoActions.Other:
     //   return state; // or something.

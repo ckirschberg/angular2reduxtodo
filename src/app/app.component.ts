@@ -23,5 +23,11 @@ export class AppComponent implements OnInit {
   onAddTodo(userText: String) : void {
     this.todoActions.addTodo(userText);
   }
+  onDelete(todo: Todo) : void {
+    this.todoActions.deleteTodo(todo);
+  }
+  onUpdate(todo: Todo) : void {
+    this.todoActions.updateTodo(todo);
+  }
 
 }
