@@ -14,8 +14,7 @@ export class AppComponent implements OnInit {
   private todos$: Observable<Todo[]>;
 
   ngOnInit(): void {
-    this.todos$ = this.ngRedux.select(store => store.todos);
-    
+    this.todos$ = this.ngRedux.select(store => store.todos.todos);
   }
 
   constructor(private todoActions: TodoActions,

@@ -2,13 +2,18 @@ import { combineReducers } from 'redux';
 import { todoReducer } from './todo.reducer';
 import { Todo } from './todo';
 
+export class TodoState {
+    todos: Todo[];
+    isCommunicate: boolean;
+    //...
+};
+
 export class IAppState {
-  todos?: Todo[]; 
-  //expand when needed.
+  todos?: TodoState; 
 };
 
 export const rootReducer = combineReducers<IAppState>({
-   todo: todoReducer
+   todos: todoReducer
    //newReducerName: reducer
 });
 
