@@ -8,8 +8,14 @@ export class TodoState {
     //...
 };
 
+// export class UserState {
+//     users: User[];
+//     isCommunicate: boolean;
+//     //...
+// };
 export class IAppState {
   todos?: TodoState; 
+  //users?: UserState;
 };
 
 export const rootReducer = combineReducers<IAppState>({
