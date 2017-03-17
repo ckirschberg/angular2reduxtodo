@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { NgRedux, NgReduxModule, DevToolsExtension} from '@angular-redux/store';
+import { NgRedux, NgReduxModule, DevToolsExtension}  
+  from '@angular-redux/store';
 import { IAppState, rootReducer, enhancers } from './store';
 const createLogger = require('redux-logger');
 
@@ -18,7 +19,8 @@ import { TodoActions } from './todo.actions';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgReduxModule
   ],
   providers: [TodoActions],
   bootstrap: [AppComponent]

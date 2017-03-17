@@ -9,9 +9,12 @@ const INITIAL_STATE: any = {
 export function todoReducer(state: IAppState = INITIAL_STATE, action:any) {
   switch (action.type) {
 
-    case TodoActions.SOME_ACTION:
-        return state;
+    case TodoActions.ADD_TODO:
+      return state;
     
+    // case TodoActions.Other:
+    //   return state; // or something.
+
     default:
       return state;
   }

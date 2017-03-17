@@ -1,3 +1,9 @@
 <h1>
-  {{title}}
+  My todo list
 </h1>
+
+<div>
+  <input type="text" [(ngModel)]="userText">
+  <button (click)="onAddTodo(userText)">Create new todo</button>
+</div>
+
