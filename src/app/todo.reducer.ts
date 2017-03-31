@@ -24,14 +24,15 @@ export function todoReducer(state: TodoState = INITIAL_STATE,
       // console.log("in the update part of the reducer. Update this todo", 
       //   action.payload);
 
-      return { 
-        todos: state.todos.map(todo => {
+      // Mark's solution. Please write your own, thank you.
+      // return { 
+      //   todos: state.todos.map(todo => {
         
-        if (todo.text !== action.payload.text) {
-          return todo;
-        }
-        return { text: action.payload.text, done: !action.payload.done }
-      })}
+      //   if (todo.text !== action.payload.text) {
+      //     return todo;
+      //   }
+      //   return { text: action.payload.text, done: !action.payload.done }
+      // })}
 
 
       // // Copy todo obj. and toggle done
