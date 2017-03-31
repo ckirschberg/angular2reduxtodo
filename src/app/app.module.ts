@@ -1,3 +1,4 @@
+import { TodoService } from './todo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +23,7 @@ import { TodoActions } from './todo.actions';
     HttpModule,
     NgReduxModule
   ],
-  providers: [TodoActions],
+  providers: [TodoActions, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
