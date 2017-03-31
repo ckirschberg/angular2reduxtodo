@@ -11,10 +11,17 @@ import { Todo } from "app/todo";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  private todos$: Observable<Todo[]>;
+  private todos: Todo[];
+
+  ngOnDestroy(): void {
+    this.todos = undefined;
+  }
 
   ngOnInit(): void {
-    this.todos$ = this.ngRedux.select(store => store.todos.todos);
+    this.ngRedux.select(store => store.todos.todos)
+      .subscribe(res => { this.todos = res });
+      
+    // this.todos$ = this.ngRedux.select(store => store.todos.todos);
   }
 
   constructor(private todoActions: TodoActions,
