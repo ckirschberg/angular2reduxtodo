@@ -12,7 +12,9 @@ function getStandardState() {
 }
 
 describe('todo reducer', () => {
-
+  it ('dummy test', () => {
+    expect(1).toBe(1);
+  })
   it('should add a todo ', () => {
     let state = getStandardState();
     deepFreeze(state); // Applies deep freeze on the IAppState
