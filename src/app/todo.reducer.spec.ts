@@ -1,7 +1,7 @@
 import { TodoState, IAppState } from './store';
 import {todoReducer} from './todo.reducer';
 import {Todo} from './todo';
-import * as types from './todo.actions';
+import { TodoActions } from "./todo.actions";
 
 var deepFreeze = require('deep-freeze');
 
@@ -18,7 +18,7 @@ describe('todo reducer', () => {
     deepFreeze(state); // Applies deep freeze on the IAppState
 
     let newState = todoReducer(state, {
-      type: types.TodoActions.ADD_TODO,
+      type: TodoActions.ADD_TODO,
       payload: 'Party'
     });
 
