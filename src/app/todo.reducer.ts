@@ -24,19 +24,29 @@ export function todoReducer(state: TodoState = INITIAL_STATE,
       // console.log("in the update part of the reducer. Update this todo", 
       //   action.payload);
 
-      // Copy todo obj. and toggle done
-      let newObj = Object.assign({}, action.payload.todo);
-      newObj.done = !newObj.done;
+      return { 
+        todos: state.todos.map(todo => {
+        
+        if (todo.text !== action.payload.text) {
+          return todo;
+        }
+        return { text: action.payload.text, done: !action.payload.done }
+      })}
+
+
+      // // Copy todo obj. and toggle done
+      // let newObj = Object.assign({}, action.payload.todo);
+      // newObj.done = !newObj.done;
       
-      // Take array up to the todo's index, and after index+1. Insert new obj. in between.
-      let updatedState = [
-        ...state.todos.slice(0, action.payload.index),
-        newObj,
-        ...state.todos.slice(action.payload.index+1)
-      ];
+      // // Take array up to the todo's index, and after index+1. Insert new obj. in between.
+      // let updatedState = [
+      //   ...state.todos.slice(0, action.payload.index),
+      //   newObj,
+      //   ...state.todos.slice(action.payload.index+1)
+      // ];
 
-      return Object.assign({}, state, { todos: updatedState });
-
+      // return Object.assign({}, state, { todos: updatedState });
+      
 
       // return state;
 
